@@ -234,13 +234,13 @@
                 src="https://pub-4dc8201144ca418fb604349c73e8c724.r2.dev/Forever%20and%20Ever%20and%20Always%20(The%20Wedding%20Song)%20-%20Ryan%20Mack%20(1).mp3"
                 type="audio/mp3">
             </audio> <!-- Envelope overlay -->
-            <div id="weiOverlay"> <img id="weiImg" src="images/Y&T.png" alt="Open your invitation" draggable="false">
+            <div id="weiOverlay"> <img id="weiImg" src="images/Y_T.png" alt="Open your invitation" draggable="false">
               <div id="weiTapWrap">
                 <div class="wei-chevron"></div>
                 <div id="weiTapLabel">Tap to open</div>
               </div>
             </div> <!-- Video -->
-            <div id="weiVideoWrap"> <video id="weiVideo" src="images/Y&T.mp4" muted playsinline preload="auto"></video>
+            <div id="weiVideoWrap"> <video id="weiVideo" src="images/Y_T.mp4" muted playsinline preload="auto"></video>
             </div> <!-- Floating play/pause button -->
             <div id="weiAudioBtn"> <svg id="weiIconPause" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                 style="display:block">
@@ -6278,39 +6278,6 @@
           }
         }
 
-        @media screen and (max-width: 767px) {
-
-          /* Ghi đè khung chứa ảnh */
-          div.t396__elem.my-custom-photo-2 {
-            display: block !important;
-            position: absolute !important;
-            width: 280px !important;
-            /* Chiều rộng hiển thị trên mobile */
-            height: auto !important;
-            left: 50% !important;
-            /* Căn giữa màn hình */
-            transform: translateX(-50%) !important;
-            top: 960px !important;
-            /* Khoảng cách từ trên xuống (điều chỉnh tăng/giảm nếu cần) */
-            z-index: 99 !important;
-          }
-
-          /* Ép thẻ chứa bên trong tràn đủ khung */
-          div.t396__elem.my-custom-photo-2 .tn-atom {
-            width: 100% !important;
-            height: 100% !important;
-          }
-
-          /* Ép thẻ <img> co giãn vừa vặn, không vỡ tỉ lệ */
-          div.t396__elem.my-custom-photo-2 img.tn-atom__img {
-            width: 100% !important;
-            height: auto !important;
-            max-width: 100% !important;
-            object-fit: contain !important;
-            display: block !important;
-          }
-        }
-
         #rec2487446223 .t396__artboard {
           height: 438px;
           background-color: #f9f0e0;
@@ -6377,6 +6344,42 @@
 
           #rec2487446223 .t396__carrier {
             background-attachment: scroll;
+          }
+
+          .t396__elem.my-custom-photo-2 {
+            width: 90% !important;
+            /* Co giãn theo tỷ lệ độ rộng màn hình di động */
+            max-width: 320px !important;
+            /* Giới hạn độ rộng tối đa */
+            height: auto !important;
+            /* Tự động tính chiều cao để không xé/bị cắt */
+            left: 50% !important;
+            /* Căn giữa màn hình */
+            transform: translateX(-50%) rotate(-1.5deg) !important;
+            top: 30px !important;
+            /* Điều chỉnh khoảng cách top phù hợp với khung */
+            display: block !important;
+            position: relative !important;
+            /* Tránh bị tràn ngoài khung cha */
+          }
+
+          /* Khung thẻ tn-atom bao quanh hình ảnh */
+          .my-custom-photo-2 .tn-atom {
+            width: 100% !important;
+            height: auto !important;
+            padding: 8px !important;
+            /* Tạo viền trắng xung quanh phong cách Polaroid */
+            box-sizing: border-box !important;
+          }
+
+          /* Thẻ hình ảnh chính */
+          .my-custom-photo-2 img.tn-atom__img {
+            width: 100% !important;
+            height: auto !important;
+            /* Giữ đúng tỉ lệ gốc của ảnh */
+            object-fit: contain !important;
+            /* Hiển thị trọn vẹn toàn bộ bức ảnh, không cắt góc */
+            display: block !important;
           }
         }
 
@@ -7726,6 +7729,41 @@ t-form__inputsbox_vertical-form t-form__inputsbox_inrow
         });
     }, true);
   </script>
+
+  <style>
+    @media screen and (max-width: 767px) {
+
+      /* Ghi đè khung chứa ảnh */
+      div.t396__elem.my-custom-photo-2 {
+        display: block !important;
+        position: absolute !important;
+        width: 280px !important;
+        /* Chiều rộng hiển thị trên mobile */
+        height: auto !important;
+        left: 50% !important;
+        /* Căn giữa màn hình */
+        transform: translateX(-50%) !important;
+        top: 960px !important;
+        /* Khoảng cách từ trên xuống (điều chỉnh tăng/giảm nếu cần) */
+        z-index: 99 !important;
+      }
+
+      /* Ép thẻ chứa bên trong tràn đủ khung */
+      div.t396__elem.my-custom-photo-2 .tn-atom {
+        width: 100% !important;
+        height: 100% !important;
+      }
+
+      /* Ép thẻ <img> co giãn vừa vặn, không vỡ tỉ lệ */
+      div.t396__elem.my-custom-photo-2 img.tn-atom__img {
+        width: 100% !important;
+        height: auto !important;
+        max-width: 100% !important;
+        object-fit: contain !important;
+        display: block !important;
+      }
+    }
+  </style>
 
 </body>
 
