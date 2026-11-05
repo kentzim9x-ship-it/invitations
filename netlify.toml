@@ -1,11 +1,29 @@
 [build]
   publish = "."
 
+# 1. Điều hướng trang chủ (/) về file index.html nằm bên trong thư mục webgencyinvitations.com
 [[redirects]]
   from = "/"
   to = "/webgencyinvitations.com/index.html"
   status = 200
 
+# 2. Map tất cả các asset (css, images,...) gọi từ gốc trang web vào đúng thư mục webgencyinvitations.com
+[[redirects]]
+  from = "/custom444d.css"
+  to = "/webgencyinvitations.com/custom444d.css"
+  status = 200
+
+[[redirects]]
+  from = "/images/*"
+  to = "/webgencyinvitations.com/images/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/-/*"
+  to = "/webgencyinvitations.com/-/:splat"
+  status = 200
+
+# 3. Giữ nguyên các request gọi tới các thư mục CDN tĩnh ở thư mục gốc (nếu có)
 [[redirects]]
   from = "/*"
   to = "/:splat"
