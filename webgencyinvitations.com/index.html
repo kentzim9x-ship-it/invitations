@@ -6126,7 +6126,7 @@
             data-field-left-res-640-value="40" data-field-left-res-960-value="200">
             <div class='tn-atom' field='tn_text_1778524751695000002'>Hope to see you there</div>
           </div>
-          <div class='t396__elem tn-elem my-custom-photo-2' data-elem-type='image'>
+          <div class='t396__elem tn-elem my-custom-photo-2' data-elem-id='my-photo-2' data-elem-type='image'>
             <div class='tn-atom'>
               <img class='tn-atom__img t-img' src='images/BON04396.jpg' alt='Our Photo' />
             </div>
@@ -6275,6 +6275,39 @@
             object-fit: cover;
             /* Giúp ảnh lấp đầy khung viền mà không bị méo */
             display: block;
+          }
+        }
+
+        @media screen and (max-width: 767px) {
+
+          /* Ghi đè khung chứa ảnh */
+          div.t396__elem.my-custom-photo-2 {
+            display: block !important;
+            position: absolute !important;
+            width: 280px !important;
+            /* Chiều rộng hiển thị trên mobile */
+            height: auto !important;
+            left: 50% !important;
+            /* Căn giữa màn hình */
+            transform: translateX(-50%) !important;
+            top: 960px !important;
+            /* Khoảng cách từ trên xuống (điều chỉnh tăng/giảm nếu cần) */
+            z-index: 99 !important;
+          }
+
+          /* Ép thẻ chứa bên trong tràn đủ khung */
+          div.t396__elem.my-custom-photo-2 .tn-atom {
+            width: 100% !important;
+            height: 100% !important;
+          }
+
+          /* Ép thẻ <img> co giãn vừa vặn, không vỡ tỉ lệ */
+          div.t396__elem.my-custom-photo-2 img.tn-atom__img {
+            width: 100% !important;
+            height: auto !important;
+            max-width: 100% !important;
+            object-fit: contain !important;
+            display: block !important;
           }
         }
 
