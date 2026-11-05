@@ -6128,7 +6128,7 @@
           </div>
           <div class='t396__elem tn-elem my-custom-photo-2' data-elem-id='my-photo-2' data-elem-type='image'>
             <div class='tn-atom'>
-              <img class='tn-atom__img t-img' src='images/BON04396.jpg' alt='Our Photo' />
+              <img class='tn-atom__img t-img' src='images/BON04396_1.jpg' alt='Our Photo' />
             </div>
           </div>
           <div class='t396__elem tn-elem tn-elem__24874461831780166531595' data-elem-id='1780166531595'
@@ -6263,18 +6263,22 @@
             display: block !important;
           }
 
-          /* Đảm bảo thẻ img bên trong co giãn 100% theo khung chứa */
-          .my-custom-photo-2 .tn-atom {
-            width: 100% !important;
-            height: 100% !important;
+          .my-custom-photo-2 {
+            width: 75% !important;
+            /* Co độ rộng vừa phải so với màn hình */
+            max-width: 280px !important;
+            /* Giới hạn độ rộng tối đa */
+            margin: 0 auto !important;
           }
 
+          /* Thẻ ảnh bên trong */
           .my-custom-photo-2 img.tn-atom__img {
             width: 100% !important;
             height: auto !important;
-            object-fit: cover;
-            /* Giúp ảnh lấp đầy khung viền mà không bị méo */
-            display: block;
+            max-height: 45vh !important;
+            /* Chiều cao tối đa chỉ chiếm 45% màn hình điện thoại */
+            object-fit: contain !important;
+            /* Giữ trọn vẹn 100% hình ảnh không bị cắt góc */
           }
         }
 
@@ -6344,42 +6348,6 @@
 
           #rec2487446223 .t396__carrier {
             background-attachment: scroll;
-          }
-
-          .t396__elem.my-custom-photo-2 {
-            width: 90% !important;
-            /* Co giãn theo tỷ lệ độ rộng màn hình di động */
-            max-width: 320px !important;
-            /* Giới hạn độ rộng tối đa */
-            height: auto !important;
-            /* Tự động tính chiều cao để không xé/bị cắt */
-            left: 50% !important;
-            /* Căn giữa màn hình */
-            transform: translateX(-50%) rotate(-1.5deg) !important;
-            top: 30px !important;
-            /* Điều chỉnh khoảng cách top phù hợp với khung */
-            display: block !important;
-            position: relative !important;
-            /* Tránh bị tràn ngoài khung cha */
-          }
-
-          /* Khung thẻ tn-atom bao quanh hình ảnh */
-          .my-custom-photo-2 .tn-atom {
-            width: 100% !important;
-            height: auto !important;
-            padding: 8px !important;
-            /* Tạo viền trắng xung quanh phong cách Polaroid */
-            box-sizing: border-box !important;
-          }
-
-          /* Thẻ hình ảnh chính */
-          .my-custom-photo-2 img.tn-atom__img {
-            width: 100% !important;
-            height: auto !important;
-            /* Giữ đúng tỉ lệ gốc của ảnh */
-            object-fit: contain !important;
-            /* Hiển thị trọn vẹn toàn bộ bức ảnh, không cắt góc */
-            display: block !important;
           }
         }
 
